@@ -1,0 +1,48 @@
+{
+  "name": "bun-astro-starter-with-bootstrap",
+  "version": "1.0.0",
+  "description": "A starter template using Bun.js, Astro.js, Alpine.js, Bootstrap, and TypeScript.",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "bun astro dev",
+    "build": "bun astro build",
+    "start": "bun astro preview",
+    "check": "tsc --noEmit",
+    "clean": "rm -rf dist .astro",
+    "sass": "sass src/styles/bootstrap.scss src/styles/bootstrap.css --style=compressed --quiet --source-map",
+    "sass:watch": "sass --watch src/styles/bootstrap.scss:src/styles/bootstrap.css --style=compressed --quiet --source-map",
+    "test:axe": "node test-axe.mjs",
+    "postbuild": "echo 'Build completed. Run accessibility tests manually if needed: npm run test:axe && npm run test:lighthouse'",
+    "test:lighthouse": "node test-lighthouse.mjs"
+  },
+  "dependencies": {
+    "@astrojs/alpinejs": "^0.4.0",
+    "@astrojs/sitemap": "^3.2.0",
+    "alpinejs": "^3.14.1",
+    "astro": "^4.16.2",
+    "axe-core": "^4.10.0",
+    "bootstrap": "^5.3.3",
+    "lighthouse": "^12.2.1",
+    "puppeteer": "^23.5.3",
+    "sass": "^1.79.5",
+    "typescript": "^5.6.3",
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "@astrojs/ts-plugin": "^1.10.2",
+    "@types/node": "^22.7.5",
+    "@types/bootstrap": "^5.2.10",
+    "lightningcss": "^1.27.0"
+  },
+  "keywords": [
+    "bun",
+    "astro",
+    "alpinejs",
+    "bootstrap",
+    "typescript",
+    "starter",
+    "template"
+  ],
+  "author": "Casoon",
+  "license": "MIT"
+}

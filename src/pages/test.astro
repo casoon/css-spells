@@ -1,0 +1,18 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+
+const title = "Astro + Bun.js + Alpine.js213";
+const description = "Erstellen Sie moderne Webseiten mit Astro, Bun.js und Alpine.js. Lernen Sie, wie Sie interaktive Inhalte mit minimalem Aufwand integrieren.";
+const exclude = false
+---
+
+<MainLayout {title} {description}>
+    <h2 class="text-3xl text-center text-gray-900">Willkommen zu Astro + Bun.js + Alpine.js</h2>
+
+    <div x-data="{ open: false }" class="text-center mt-6">
+        <button @click="open = !open" class="bg-blue-700 hover:bg-blue-900 px-4 py-2 rounded">
+            Toggle Info
+        </button>
+        <p x-show="open" class="mt-4 text-lg text-gray-800">Hier ist interaktiver Inhalt mit Alpine.js!</p>
+    </div>
+</MainLayout>

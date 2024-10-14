@@ -1,0 +1,79 @@
+---
+import "@/styles/global.css";
+import '@/styles/bootstrap.css';
+import config from '@/config';
+
+// Props für title und description
+const {title, description} = Astro.props;
+
+console.log("siteUrl: ", config.siteUrl);
+---
+
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{title}</title>
+    <meta name="description" content={description}/>
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content={title}/>
+    <meta property="og:description" content={description}/>
+    <meta property="og:image" content="/path/to/image.jpg"/>
+    <meta property="og:url" content={config.siteUrl}/>
+    <meta property="og:type" content="website"/>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content={title}/>
+    <meta name="twitter:description" content={description}/>
+    <meta name="twitter:image" content="/path/to/image.jpg"/>
+
+    <!-- Author from Config -->
+    <meta name="author" content={config.author}/>
+
+    <!-- Canonical Link from Config -->
+    <link rel="canonical" href={config.canonical}/>
+
+    <link rel="sitemap" href="/sitemap-index.xml"/>
+
+    <meta name="generator" content={Astro.generator}/>
+    {Astro.head}
+</head>
+<body>
+<header class="bg-dark p-4 text-white">
+    <h1 class="text-center">Astro + Bootstrap</h1>
+</header>
+
+<main class="container">
+    <slot/>
+</main>
+
+<footer class="bg-dark p-4 text-center text-white">
+    <p>© 2024 Astro Project</p>
+</footer>
+
+
+</body>
+</html>
+
+<style lang="scss">
+
+</style>
+
+
+<script>
+    import 'bootstrap/js/dist/alert';
+    import 'bootstrap/js/dist/button';
+    // import 'bootstrap/js/dist/carousel';
+    // import 'bootstrap/js/dist/collapse';
+    // import 'bootstrap/js/dist/dropdown';
+    // import 'bootstrap/js/dist/modal';
+    // import 'bootstrap/js/dist/offcanvas';
+    // import 'bootstrap/js/dist/popover';
+    // import 'bootstrap/js/dist/scrollspy';
+    // import 'bootstrap/js/dist/tab';
+    // import 'bootstrap/js/dist/toast';
+    // import 'bootstrap/js/dist/tooltip';
+</script>

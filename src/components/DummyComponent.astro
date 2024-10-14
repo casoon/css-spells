@@ -1,0 +1,28 @@
+---
+const {title, description} = Astro.props;
+---
+
+<section class="dummy-component">
+    <h2>{title || "Default Title"}</h2>
+    <p>{description || "This is a placeholder description for the dummy component."}</p>
+</section>
+
+<style>
+    .dummy-component {
+        padding: 1rem;
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .dummy-component h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .dummy-component p {
+        margin-top: 0.5rem;
+        color: #666;
+    }
+</style>
